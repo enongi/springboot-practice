@@ -23,8 +23,12 @@ public class DemoApplicationTests {
     }
     @Test
     public void testUser(){
-        userService.insertService("test02","123456");
-        log.info(userService.selectService("test01"));
+        //userService.insertService("test02","123456");
+        //log.info(userService.selectService("test04"));
+        //userService.updateService("test004","123456",4);
+        //log.info(userService.selectService("test004"));
+        //userService.deleteService("test004");
+        log.info(userService.selectService("test004"));
     }
 
 }

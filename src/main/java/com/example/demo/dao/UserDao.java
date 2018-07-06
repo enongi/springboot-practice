@@ -1,10 +1,7 @@
 package com.example.demo.dao;
 
 import com.example.demo.entity.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserDao {
@@ -13,4 +10,10 @@ public interface UserDao {
 
     @Select("SELECT * FROM tb_user WHERE username = #{username}")
     User findUserByName(@Param("username") String username);
+
+    @Update("UPDATE tb_user SET username = #{username},password = #{password} WHERE id = #{id}")
+    int updateUser(@Param("username") String username,@Param("password") String password,@Param("id") int id);
+
+    @Delete("DELETE FROM tb_user WHERE username = #{username}")
+    int deleteUser(@Param("username") String username);
 }
