@@ -23,4 +23,10 @@ public class UserService {
     public User selectService(String username){
         return userDao.findUserByName(username);
     }
+    public void updateService(String username,String password,int id){
+        userDao.updateUser(username,password,id);
+    }
+    public void deleteService(String username){
+        userDao.deleteUser(username);
+    }
 }

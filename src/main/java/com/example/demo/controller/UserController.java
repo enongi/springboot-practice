@@ -38,6 +38,13 @@ public class UserController {
         log.info(user);
         return user;
     }
-
+    @RequestMapping("/update")
+    public  void updateUser(@RequestBody User user){
+        userService.updateService(user.getUsername(),user.getPassword(),user.getId().intValue());
+    }
+    @RequestMapping("/delete")
+    public void deleteUser(String username){
+        userService.deleteService(username);
+    }
 
 }
